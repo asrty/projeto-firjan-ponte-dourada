@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ponte Dourada</title>
+    <script src="scripts/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const setorNome = urlParams.get("setor");
+
+        if (setorNome) {
+          const labelSetor = document.getElementById("nome-setor");
+          if (labelSetor) {
+            labelSetor.textContent = setorNome;
+          }
+        }
+      });
+    </script>
+    <link rel="stylesheet" href="estilos/style.css" />
+  </head>
+  <body>
+    <div class="principal">
+      <label id="nome-setor">Nome Setor...</label>
+      <img
+        src="img/Logotipos/logo-fundo-laranja.svg"
+        alt="Ponte Dourada"
+        class="logo-principal"
+      />
+      <div class="bloco-1">
+        <div>
+          <button><img src="img/PNG/32px/153-aid-kit.png" alt="" /></button>
+          <label>Produtos</label>
+        </div>
+        <div>
+          <button>
+            <img
+              src="img/PNG/32px/175-briefcase.png"
+              alt="Mala de ferramenta"
+            />
+          </button>
+          <label>Serviços</label>
+        </div>
+        <div>
+          <button><img src="img/PNG/32px/084-calendar.png" alt="" /></button>
+          <label>Agendamentos</label>
+        </div>
+      </div>
+      <div class="bloco-2">
+        <div>
+          <button><img src="img/PNG/32px/177-truck.png" alt="" /></button>
+          <label>Fornecedores</label>
+        </div>
+        <div>
+          <button>
+            <img src="img/PNG/32px/119-user-tie.png" alt="Proficional" />
+          </button>
+          <label>Profissionais</label>
+        </div>
+        <div>
+          <button>
+            <img src="img/PNG/32px/115-users.png" alt="Clientes" />
+          </button>
+          <label>Clientes</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

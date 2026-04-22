@@ -1,0 +1,156 @@
+:root {
+  /* Cores da marca*/
+  --cor-primaria: #fa2408;
+  --cor-secundaria: #000000;
+  --cor-escura: #cb2b16;
+  --cor-realcar: #fb4e37;
+  --cor-sutil: #fda69b;
+  --cor-bg: #fafafc;
+  --cor-superficie: #f2f2f5;
+  --cor-texto: #ffffff;
+  --cor-texto-secunario: #3a3a3c;
+  --cor-texto-atencao: #ffcc00;
+  --cor-borda: rgba(255, 255, 255, 0.3);
+  /* Estados */
+  --cor-erro: #ff3b3b;
+  --cor-atencao: #ffcc00;
+  --cor-info: #0063f7;
+  --cor-success: #06c270;
+  --cor-sombra: rgba(0, 0, 0, 0.1);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --transition: 0.3s ease;
+  --container-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Uber-Mediun";
+  src: url("Fontes/UberMoveMedium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Uber-Bold";
+  src: url("Fontes/UberMoveBold.otf") format("opentype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Uber-Mediun", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  background-color: var(--cor-bg);
+}
+button,
+input {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-md);
+}
+
+form {
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label,
+input {
+  width: 80%;
+  margin: 8px;
+  font-size: 22px;
+}
+
+.principal {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.2); /* Cor branca com 20% de opacidade */
+  backdrop-filter: blur(15px);          /* Desfoca o que está atrás da div */
+  -webkit-backdrop-filter: blur(15px);  /* Suporte para Safari */
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--cor-sombra);
+}
+
+.principal .logo-principal {
+  width: 80%;
+  max-width: 400px;
+  margin: 40px;
+  box-shadow: 0 6px 12px var(--cor-sombra);
+}
+
+.bloco-1, .bloco-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
+  gap: 20px;                             /* Espaçamento entre os itens */
+  width: 90%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bloco-1 div, .bloco-2 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Estilização dos Botões */
+button {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cor-texto);
+  background-color: var(--cor-primaria);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--cor-escura);
+  transform: translateY(-3px); /* Efeito de flutuar ao passar o mouse */
+  border-color: var(--cor-borda);
+}
+
+button img {
+  width: 32px;
+  filter: brightness(0) invert(1); /* Torna o ícone totalmente branco */
+  transition: var(--transition);
+}
+
+button:hover img {
+  /* Exemplo: torna o ícone levemente avermelhado usando filtros */
+  filter: sepia(1) saturate(20) hue-rotate(320deg); 
+}
+
+/* Estilização das Labels abaixo dos botões */
+.bloco-1 label, .bloco-2 label {
+  font-size: 14px;
+  color: var(--cor-texto-secunario);
+  font-family: "Uber-Mediun", sans-serif;
+  margin: 0; /* Remove margens que podem quebrar o alinhamento */
+  width: auto;
+}
