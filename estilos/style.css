@@ -72,7 +72,62 @@ form label,
 input {
   width: 80%;
   margin: 8px;
-  font-size: 22px;
+}
+
+form #logar-id {
+  min-height: 40px;
+  border-radius: 14px;
+  color: var(--cor-texto);
+  font-size: large;
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 12px var(--cor-sombra);
+  background-color: var(--cor-primaria);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+form #logar-id:hover {
+  background-color: var(--cor-escura);
+  transform: translateY(-3px); /* Efeito de flutuar ao passar o mouse */
+  border-color: var(--cor-borda);
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  margin-top: 18px;
+  width: 100%;
+}
+
+form .input-group input {
+  min-height: 60px;
+  border-radius: 14px;
+  border: 1px solid var(--cor-borda);
+  padding: 18px 16px 8px;
+  font-size: 1rem;
+  
+  box-shadow: 0 4px 12px var(--cor-sombra);
+}
+
+.input-group label {
+  position: absolute;
+  top: 20px;
+  left: 56px;
+  pointer-events: none;
+  color: var(--cor-texto-secunario);
+  transition: var(--transition);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 5px;
+  left: 52px;
+  
+  color: var(--cor-secundaria);
+  font-size: 0.85rem;
 }
 
 .principal {
