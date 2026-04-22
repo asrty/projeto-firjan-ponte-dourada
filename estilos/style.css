@@ -17,6 +17,7 @@
   --cor-info: #0063f7;
   --cor-success: #06c270;
   --cor-sombra: rgba(0, 0, 0, 0.1);
+  --cor-sombra-filter: drop-shadow(2px 4px 6px  rgba(0, 0, 0, 0.1));
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -157,8 +158,13 @@ form .input-group input {
   width: 80%;
   max-width: 400px;
   margin: 40px;
+  filter: var(--cor-sombra-filter);
+  transition: var(--transition);
 }
 
+.principal .logo-principal-login:hover {
+  transform: scale(1.1);
+}
 
 .bloco-1, .bloco-2 {
   display: grid;
