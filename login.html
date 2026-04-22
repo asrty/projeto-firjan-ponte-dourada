@@ -12,14 +12,24 @@
       <img
         src="img/Logotipos/PonteDourada.svg"
         alt="Ponte Dourada"
-        class="logo-principal"
+        class="logo-principal-login"
       />
       <form onsubmit="logar(event)">
-        <label>Login</label>
-        <input type="text" name="email" required id="email" />
-        <label>Senha</label>
-        <input type="password" name="senha" required id="senha" />
-        <input type="submit" value="Logar" />
+        <div class="input-group">
+          <input type="text" name="email" required id="email" placeholder=" " />
+          <label>Login</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            name="senha"
+            required
+            id="senha"
+            placeholder=" "
+          />
+          <label>Senha</label>
+        </div>
+        <input type="submit" value="Logar" id="logar-id" />
       </form>
     </div>
   </body>
