@@ -278,6 +278,7 @@ button:hover img {
 .modal {
   display: none;
   position: fixed;
+  overflow-y: auto;
   flex-direction: column;
   align-items: center;
   inset: 0;
@@ -291,7 +292,7 @@ button:hover img {
   flex-direction: column;
   align-items: center;
   width: min(92%, 480px);
-  margin: 8vh auto 0;
+  margin: 40px auto;
   background: var(--cor-bg);
   border: 1px solid var(--cor-borda);
   border-radius: 24px;
