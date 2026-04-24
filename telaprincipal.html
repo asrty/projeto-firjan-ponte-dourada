@@ -30,11 +30,16 @@
       />
       <div class="bloco-1">
         <div>
-          <button><img src="img/PNG/32px/153-aid-kit.png" alt="" /></button>
+          <button onclick="abrirModal('produtos')">
+            <img
+              src="img/PNG/32px/153-aid-kit.png"
+              alt="Kit de primeiros socorros"
+            />
+          </button>
           <label>Produtos</label>
         </div>
         <div>
-          <button>
+          <button onclick="abrirModal('servicos')">
             <img
               src="img/PNG/32px/175-briefcase.png"
               alt="Mala de ferramenta"
@@ -43,26 +48,39 @@
           <label>Serviços</label>
         </div>
         <div>
-          <button><img src="img/PNG/32px/084-calendar.png" alt="" /></button>
+          <button onclick="abrirModal('agendamentos')">
+            <img src="img/PNG/32px/084-calendar.png" alt="Calendário" />
+          </button>
           <label>Agendamentos</label>
         </div>
       </div>
       <div class="bloco-2">
         <div>
-          <button><img src="img/PNG/32px/177-truck.png" alt="" /></button>
+          <button onclick="abrirModal('fornecedores')">
+            <img src="img/PNG/32px/177-truck.png" alt="Caminhão" />
+          </button>
           <label>Fornecedores</label>
         </div>
         <div>
-          <button>
-            <img src="img/PNG/32px/119-user-tie.png" alt="Proficional" />
+          <button onclick="abrirModal('profissionais')">
+            <img src="img/PNG/32px/119-user-tie.png" alt="Profissional" />
           </button>
           <label>Profissionais</label>
         </div>
         <div>
-          <button>
+          <button onclick="abrirModal('clientes')">
             <img src="img/PNG/32px/115-users.png" alt="Clientes" />
           </button>
           <label>Clientes</label>
+        </div>
+      </div>
+    </div>
+    <!-- Estrutura do Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <div id="form-container">
+          <!-- O conteúdo muda entre Login e Cadastro via JS -->
         </div>
       </div>
     </div>
