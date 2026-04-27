@@ -9,6 +9,94 @@
       document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
         const setorNome = urlParams.get("setor");
+        const principal = document.getElementById("principal");
+        switch (setorNome) {
+          case "GESTOR":
+            principal.innerHTML = `<label id="nome-setor">Nome Setor...</label>
+            <img
+              src="img/Logotipos/logo-fundo-laranja.svg"
+              alt="Ponte Dourada"
+              class="logo-principal"
+            />
+            <div class="bloco-1">
+              <div>
+                <button onclick="abrirModal('produtos')">
+                  <img
+                    src="img/PNG/32px/153-aid-kit.png"
+                    alt="Kit de primeiros socorros"
+                  />
+                </button>
+                <label>Produtos</label>
+              </div>
+              <div>
+                <button onclick="abrirModal('servicos')">
+                  <img
+                    src="img/PNG/32px/175-briefcase.png"
+                    alt="Mala de ferramenta"
+                  />
+                </button>
+                <label>Serviços</label>
+              </div>
+              <div>
+                <button onclick="abrirModal('agendamentos')">
+                  <img src="img/PNG/32px/084-calendar.png" alt="Calendário" />
+                </button>
+                <label>Agendamentos</label>
+              </div>
+            </div>
+            <div class="bloco-2">
+              <div>
+                <button onclick="abrirModal('fornecedores')">
+                  <img src="img/PNG/32px/177-truck.png" alt="Caminhão" />
+                </button>
+                <label>Fornecedores</label>
+              </div>
+              <div>
+                <button onclick="abrirModal('profissionais')">
+                  <img src="img/PNG/32px/119-user-tie.png" alt="Profissional" />
+                </button>
+                <label>Profissionais</label>
+              </div>
+              <div>
+                <button onclick="abrirModal('clientes')">
+                  <img src="img/PNG/32px/115-users.png" alt="Clientes" />
+                </button>
+                <label>Clientes</label>
+              </div>
+            </div>`;
+            break;
+          case "ATENDIMENTO":
+            principal.innerHTML = `<label id="nome-setor">Nome Setor...</label>
+              <img
+                src="img/Logotipos/logo-fundo-laranja.svg"
+                alt="Ponte Dourada"
+                class="logo-principal"
+              />
+              <div class="bloco-1">
+                <div>
+                  <button onclick="abrirModal('servicos')">
+                    <img
+                      src="img/PNG/32px/175-briefcase.png"
+                      alt="Mala de ferramenta"
+                    />
+                  </button>
+                  <label>Serviços</label>
+                </div>
+                <div>
+                  <button onclick="abrirModal('agendamentos')">
+                    <img src="img/PNG/32px/084-calendar.png" alt="Calendário" />
+                  </button>
+                  <label>Agendamentos</label>
+                </div>
+                <div>
+                  <button onclick="abrirModal('clientes')">
+                    <img src="img/PNG/32px/115-users.png" alt="Clientes" />
+                  </button>
+                  <label>Clientes</label>
+                </div>
+              </div>`;
+            break;
+        }
 
         if (setorNome) {
           const labelSetor = document.getElementById("nome-setor");
@@ -21,59 +109,8 @@
     <link rel="stylesheet" href="estilos/style.css" />
   </head>
   <body>
-    <div class="principal">
-      <label id="nome-setor">Nome Setor...</label>
-      <img
-        src="img/Logotipos/logo-fundo-laranja.svg"
-        alt="Ponte Dourada"
-        class="logo-principal"
-      />
-      <div class="bloco-1">
-        <div>
-          <button onclick="abrirModal('produtos')">
-            <img
-              src="img/PNG/32px/153-aid-kit.png"
-              alt="Kit de primeiros socorros"
-            />
-          </button>
-          <label>Produtos</label>
-        </div>
-        <div>
-          <button onclick="abrirModal('servicos')">
-            <img
-              src="img/PNG/32px/175-briefcase.png"
-              alt="Mala de ferramenta"
-            />
-          </button>
-          <label>Serviços</label>
-        </div>
-        <div>
-          <button onclick="abrirModal('agendamentos')">
-            <img src="img/PNG/32px/084-calendar.png" alt="Calendário" />
-          </button>
-          <label>Agendamentos</label>
-        </div>
-      </div>
-      <div class="bloco-2">
-        <div>
-          <button onclick="abrirModal('fornecedores')">
-            <img src="img/PNG/32px/177-truck.png" alt="Caminhão" />
-          </button>
-          <label>Fornecedores</label>
-        </div>
-        <div>
-          <button onclick="abrirModal('profissionais')">
-            <img src="img/PNG/32px/119-user-tie.png" alt="Profissional" />
-          </button>
-          <label>Profissionais</label>
-        </div>
-        <div>
-          <button onclick="abrirModal('clientes')">
-            <img src="img/PNG/32px/115-users.png" alt="Clientes" />
-          </button>
-          <label>Clientes</label>
-        </div>
-      </div>
+    <div  id="principal" class="principal">
+      <!--Conteudo por login-->
     </div>
     <!-- Estrutura do Modal -->
     <div id="modal" class="modal">
@@ -83,6 +120,9 @@
           <!-- O conteúdo muda entre Login e Cadastro via JS -->
         </div>
       </div>
+    </div>
+    <div class="logout">
+      <input type="button" value="Sair" onclick="sairsistema()">
     </div>
   </body>
 </html>

@@ -55,10 +55,38 @@ body {
   min-height: 100vh; 
   background-color: var(--cor-bg);
 }
+
 button,
 input {
   border: 1px solid var(--cor-borda);
   border-radius: var(--radius-md);
+}
+
+.logout {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.logout input {
+  min-height: 40px;
+  border-radius: 14px;
+  color: var(--cor-texto);
+  font-size: large;
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 12px var(--cor-sombra);
+  background-color: var(--cor-primaria);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.logout input:hover {
+  background-color: var(--cor-escura);
+  transform: translateY(-3px); /* Efeito de flutuar ao passar o mouse */
+  border-color: var(--cor-borda);
 }
 
 form {

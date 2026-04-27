@@ -200,3 +200,7 @@ function fecharModal() {
   const modal = document.getElementById("modal");
   modal.style.display = "none";
 }
+
+function sairsistema() {
+  window.location.href="login.html"
+}
