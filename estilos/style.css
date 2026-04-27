@@ -108,6 +108,25 @@ form input[type="submit"]:hover {
   border-color: var(--cor-borda);
 }
 
+form input[type="reset"] {
+  min-height: 40px;
+  border-radius: 14px;
+  color: var(--cor-texto-secunario);
+  font-size: large;
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 12px var(--cor-sombra);
+  background-color: var(--cor-bg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+form input[type="reset"]:hover {
+  background-color: var(--cor-atencao);
+  transform: translateY(-3px); /* Efeito de flutuar ao passar o mouse */
+  border-color: var(--cor-borda);
+}
+
 .input-group {
   position: relative;
   display: flex;

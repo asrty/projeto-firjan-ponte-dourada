@@ -24,7 +24,7 @@ function abrirModal(tipo) {
   switch (tipo) {
     case "produtos":
       container.innerHTML = `<h2>Cadastro de Produtos</h2>
-        <form>
+        <form id="formproduto">
           <div class="input-group">
           <input type="text" id="nome" name="nome" placeholder=" " required>
           <label for="nome">Nome:</label>
@@ -38,11 +38,12 @@ function abrirModal(tipo) {
           <label for="fornecedor">Fornecedor:</label>
           </div>
           <input type="submit" value="Salvar">
+          <input type="reset" value="Limpar">
         </form>`;
       break;
     case "servicos":
       container.innerHTML = `<h2>Cadastro de Serviços</h2>
-        <form>
+        <form id="formServico">
           <div class="input-group">
           <input type="text" id="nome" name="nome" placeholder=" " required>
           <label for="nome">Nome:</label>
@@ -56,11 +57,12 @@ function abrirModal(tipo) {
           <label for="preco">Preço:</label>
           </div>
           <input type="submit" value="Salvar">
+          <input type="reset" value="Limpar">
         </form>`;
       break;
     case "agendamentos":
       container.innerHTML = `<h2>Cadastro de Agendamentos</h2>
-        <form>
+        <form id="formagendamento">
           <div class="input-group">
             <input type="text" id="cliente" name="cliente" placeholder=" " required>
             <label for="cliente">Cliente:</label>
@@ -96,11 +98,12 @@ function abrirModal(tipo) {
             <label for="observacao">Observação:</label>
           </div>
           <input type="submit" value="Salvar">
+          <input type="reset" value="Limpar">
         </form>`;
       break;
     case "fornecedores":
       container.innerHTML = `<h2>Cadastro de Fornecedores</h2>
-        <form>
+        <form id="formfornecedores">
           <div class="input-group">
           <input type="text" id="pessoa" name="pessoa" placeholder=" " required>
           <label for="pessoa">Pessoa:</label>
@@ -114,11 +117,12 @@ function abrirModal(tipo) {
           <label for="cnpj">CNPJ:</label>
           </div>
           <input type="submit" value="Salvar">
+          <input type="reset" value="Limpar">
         </form>`;
       break;
     case "profissionais":
       container.innerHTML = `<h2>Cadastro de Profissionais</h2>
-        <form>
+        <form id="formproficionais">
           <div class="input-group">
           <input type="text" id="pessoa" name="pessoa" placeholder=" " required>
           <label for="pessoa">Pessoa:</label>
@@ -139,11 +143,12 @@ function abrirModal(tipo) {
           <label for="cpf">CPF:</label>
           </div>
           <input type="submit" value="Salvar">
+          <input type="reset" value="Limpar">
         </form>`;
       break;
     case "clientes":
       container.innerHTML = `<h2>Cadastro de Clientes</h2>
-        <form>
+        <form id="formclientes">
           <div class="input-group">
             <input type="text" id="pessoa" name="pessoa" placeholder=" " required>
             <label for="pessoa">Pessoa:</label>
@@ -161,9 +166,34 @@ function abrirModal(tipo) {
             <label for="responsavel">Responsável:</label>
           </div>
           <input type="submit" value="Salvar">
+          <input type="reset" value="Limpar">
         </form>`;
       break;
   }
+
+  container.addEventListener("submit", function (e) {
+    // Verifica se o que foi enviado é realmente um formulário
+    if (e.target.tagName === "FORM") {
+      e.preventDefault(); // Impede o recarregamento da página
+
+      try {
+        // Captura os dados (opcional, mas bom para testar no console)
+        const formData = new FormData(e.target);
+        const dados = Object.fromEntries(formData);
+        console.log("Dados do formulário:", dados);
+
+        // Alerta de sucesso
+        alert("Formulário enviado com sucesso!");
+
+        // Limpa o formulário após o envio
+        e.target.reset();
+      } catch (error) {
+        // Alerta de erro
+        alert("Erro ao processar o envio.");
+        console.error(error);
+      }
+    }
+  });
 }
 
 function fecharModal() {
